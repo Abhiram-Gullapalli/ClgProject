@@ -1,0 +1,27 @@
+<%- include('partials/header'); -%>
+
+<form>
+    <h2>Sign up</h2>
+    <label for="email">Email</label>
+    <input type="text" name="email" required/>
+    <div class="email error"></div>
+    <label for="password">Password</label>
+    <input type="password" name="password" required/>
+    <div class="password error"></div>
+    <button>Sign up</button>
+</form>
+<script>
+    const form = document.querySelector('form')
+    //e is the event action which happens after the form is submitted
+    // by default the action of the submit is to refresh the page
+    form.addEventListener('submit', (e) => {
+        e.preventDefault()
+        // we use the prevent default function , in order to avoid the simple refreshing and perform some function
+        const email = form.email.value
+        const password = form.email.password
+       // the way the email and the password values are taken are pretty straight forward 
+        console.log(email,password)
+    })
+</script>
+
+<%- include('partials/footer'); -%>
